@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "sass",
+          "skipTests": true
         }
       },
       "root": "",
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-elements-example"
+    }
+  },
+  "defaultProject": "angular-elements-example",
+  "cli": {
+    "analytics": false
+  }
 }
