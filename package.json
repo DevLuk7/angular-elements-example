@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-hashing=none",
+    "cat": "cat dist/angular-elements-example/runtime.js dist/angular-elements-example/polyfills.js dist/angular-elements-example/main.js > demo/angular-elements-example.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "~10.0.11",
     "@angular/platform-browser-dynamic": "~10.0.11",
     "@angular/router": "~10.0.11",
+    "@webcomponents/webcomponentsjs": "^2.4.4",
     "document-register-element": "^1.7.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

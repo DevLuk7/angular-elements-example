@@ -7,12 +7,18 @@ import { User } from './user';
   styleUrls: ['./users-list.component.sass']
 })
 export class UsersListComponent implements OnInit {
-  @Input() users: User[];
+  @Input() userslist: User[];
   @Output() userSelect = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+    if (typeof this.userslist === 'string') {
+      try {
+        this.userslist = JSON.parse(this.userslist);
+      } catch {}
+    }
+    console.log(this.userslist);
   }
 
 }

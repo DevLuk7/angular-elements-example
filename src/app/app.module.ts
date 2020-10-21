@@ -14,12 +14,13 @@ import { UsersListComponent } from './users-list/users-list.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule {
   constructor(injector: Injector) {
     const el = createCustomElement(UsersListComponent, { injector });
     customElements.define('users-list', el);
   }
+
+  ngDoBootstrap() {}
 }

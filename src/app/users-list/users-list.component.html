@@ -1,3 +1,5 @@
-<p *ngFor="let user of users" (click)="userSelect.emit(user)">
+<h1>Users list</h1>
+<p *ngFor="let user of userslist">
   {{ user.name }}
+  <button (click)="userSelect.emit(user)">Set</button>
 </p>
