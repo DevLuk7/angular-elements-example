@@ -8,7 +8,7 @@ import { User } from './user';
 })
 export class UsersListComponent implements OnInit {
   @Input() userslist: User[];
-  @Output() userSelect = new EventEmitter();
+  @Output() userselect = new EventEmitter();
 
   constructor() { }
 
@@ -18,7 +18,6 @@ export class UsersListComponent implements OnInit {
         this.userslist = JSON.parse(this.userslist);
       } catch {}
     }
-    console.log(this.userslist);
   }
 
 }

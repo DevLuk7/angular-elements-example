@@ -12,14 +12,14 @@
   <h1>Static</h1>
   <users-list userslist='[{"name":"John"},{"name":"IronMan"}]'></users-list>
   <script>
-    document.querySelector('users-list').addEventListener('userSelect', e => console.log('output static', e.detail));
+    document.querySelector('users-list').addEventListener('userSelect', e => alert('output static', e.detail));
   </script>
 
   <h1>Dynamic</h1>
   <script>
     const el = document.createElement('users-list');
     el.userslist = [{name: 'John 2'}, {name: 'IronMan 2'}];
-    el.addEventListener('userSelect', e => console.log('output dynamic',e.detail));
+    el.addEventListener('userSelect', e => alert('output dynamic',e.detail));
     document.querySelector('body').appendChild(el);
   </script>
 
