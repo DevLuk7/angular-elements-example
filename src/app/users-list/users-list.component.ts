@@ -7,17 +7,23 @@ import { User } from './user';
   styleUrls: ['./users-list.component.sass']
 })
 export class UsersListComponent implements OnInit {
-  @Input() userslist: User[];
+  list: User[];
+
+  @Input()
+  set userslist(userslist: User[]|string) {
+    if (typeof userslist === 'string') {
+      try {
+        this.list = JSON.parse(userslist);
+      } catch {}
+    } else if (Array.isArray(userslist)) {
+      this.list = userslist;
+    }
+  }
+
   @Output() userselect = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit(): void {
-    if (typeof this.userslist === 'string') {
-      try {
-        this.userslist = JSON.parse(this.userslist);
-      } catch {}
-    }
-  }
+  ngOnInit(): void { }
 
 }
